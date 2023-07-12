@@ -18,7 +18,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://www.globaledulink.co.uk/">
+      <Link color="inherit" href="https://www.ims.lk/">
         manage.com
       </Link>{' '}
       {new Date().getFullYear()}
@@ -52,7 +52,7 @@ export default function Login() {
             //console.log(response.data.token);
             const token = response.data.token;
             localStorage.setItem('token', token);
-            window.location.href = '/allCompany';
+            window.location.href = '/allStudent';
 
           } catch (error) {
             // Handle the error, e.g., display an error message

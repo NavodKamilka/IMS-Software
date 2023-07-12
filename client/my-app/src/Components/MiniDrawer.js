@@ -17,8 +17,8 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import Employees from '../Pages/Employees';
-import Companies from '../Pages/Companies';
+import Student from '../Pages/Student';
+import Guardian from '../Pages/Guardian';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Menu, MenuItem } from '@mui/material';
 import axios from 'axios';
@@ -103,12 +103,12 @@ export default function MiniDrawer() {
         });
   };
 
-  const handleEmployeesClick = () => {
-    navigate('/allEmployee');
+  const handleStudentClick = () => {
+    navigate('/allStudent');
   };
 
-  const handleCompaniesClick = () => {
-    navigate('/allCompany');
+  const handleGuardianClick = () => {
+    navigate('/allGuardian');
   };
 
   return (
@@ -167,7 +167,7 @@ export default function MiniDrawer() {
                 justifyContent: 'initial',
                 px: 2.5,
               }}
-              onClick={handleCompaniesClick}
+              onClick={handleGuardianClick}
             >
               <ListItemIcon
                 sx={{
@@ -178,7 +178,7 @@ export default function MiniDrawer() {
               >
                 <InboxIcon />
               </ListItemIcon>
-              <ListItemText primary="Companies" sx={{ opacity: 1 }} />
+              <ListItemText primary="Guardian" sx={{ opacity: 1 }} />
             </ListItemButton>
           </ListItem>
         </List>
@@ -191,7 +191,7 @@ export default function MiniDrawer() {
                 justifyContent: 'initial',
                 px: 2.5,
               }}
-              onClick={handleEmployeesClick}
+              onClick={handleStudentClick}
             >
               <ListItemIcon
                 sx={{
@@ -202,7 +202,7 @@ export default function MiniDrawer() {
               >
                 <MailIcon />
               </ListItemIcon>
-              <ListItemText primary="Employees" sx={{ opacity: 1 }} />
+              <ListItemText primary="Student" sx={{ opacity: 1 }} />
             </ListItemButton>
           </ListItem>
         </List>
@@ -210,8 +210,9 @@ export default function MiniDrawer() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Routes>
-          <Route path="/allEmployee" element={<Employees />} />
-          <Route path="/allCompany" element={<Companies />} />
+          <Route path="/allStudent" element={<Student />} />
+          <Route path="/allGuardian" element={<Guardian />} />   
+          {/* companies =guardians */}
         </Routes>
       </Box>
     </Box>
